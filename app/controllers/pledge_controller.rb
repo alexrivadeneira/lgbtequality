@@ -3,6 +3,7 @@ class PledgeController < ApplicationController
   	@pledge = Pledge.new
   end
 
+
   def create
   	@pledge = Pledge.new(pledge_params)
   	if @pledge.save 
