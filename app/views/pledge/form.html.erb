@@ -1,18 +1,108 @@
 <h1>Pledge#form</h1>
 <p>Find me in app/views/pledge/form.html.erb</p>
 
-<%= form_for :pledge do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
- 
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+
+<div class="row">
+  <div class="col-md-6">
+    <%= image_tag "logo.png", :html => {:class => "img-responsive"} %>
+  </div>
+</div>
+
+
+  <%= form_for @pledge, :html => {:class => "form-horizontal center"}, url: {action: "create"} do |f| %>
+    <% if @pledge.errors.any? %>
+      <div class="error_messages alert-warning">
+        <ul>
+          <% for message in @pledge.errors.full_messages %>
+            <li><%= message %></li>
+      <% end %>
+         </ul>
+      </div>     
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :firstname, "First name", class: "col-md-3 control-label" %>
+      <div class="col-md-6">
+        <%= f.text_field :firstname %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :lastname, "Last name", class: "col-md-3 control-label" %>
+      <div class="col-md-6">
+        <%= f.text_field :lastname %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :email, "Email", class: "col-md-3 control-label" %>
+      <div class="col-md-6">
+        <%= f.text_field :email %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :program, "Program", class: "col-md-3 control-label" %>
+      <div class="col-md-6">
+        <%= f.select :program, ["Full time MBA", "Evening Weekend", "Executive MBA", "Faculty/Staff", "Other"] %>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :gradyear, "Gradyear", class: "col-md-3 control-label" %>
+      <div class="col-md-6">
+        <%= f.select :gradyear, [2017, 2018, 2019, "N/A - Faculty/Staff", "Other"] %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :cohort, "Cohort (Berkeley Only)", class: "col-md-3 control-label" %>
+      <div class="col-md-6">
+        <%= f.select :cohort, ["Blue", "Gold", "Axe", "Oski", "N/A - Faculty/Staff", "Other"] %>
+      </div>
+    </div>
+
+    <div class="radio">
+      <%= f.label :public, "Make signature public?", class: "col-md-3 control-label" %>
+
+      <div class="col-md-6">
+        <%= f.radio_button :public, 'yes', :checked => true %> Yes
+        <%= f.radio_button :public, 'no', :checked => false %> No
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <%= f.label :additional, "Additional information", class: "col-md-3 control-label" %>
+      <div class="col-md-6">
+        <%= f.text_area :additional %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :reason, "Reason sumbitting", class: "col-md-3 control-label" %>
+      <div class="col-md-6">
+        <%= f.text_area :reason %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :assist, "Can you assist?", class: "col-md-3 control-label" %>
+      <%= f.select :assist, ["Yes, I'd love to spend some time to help", "Yes, I'll talk to 5 classmates about this pledge", "Yes, I'll make a post on Facebook about why I pledged", "No, I'm busy now - but keep me informed!"] %>
+    </div>
+
+    <div class="radio">
+      <%= f.label :intl, "Are you an international student?", class: "col-md-3 control-label" %>
+      <%= f.radio_button :intl, 'yes', :checked => true %> Yes
+          <br />
+      <%= f.radio_button :intl, 'no', :checked => false %> No
+
+    </div>
+
+    <div class="form-group">
+      <%= f.label :intlcity, "If so, what city are you from?", class: "col-md-3 control-label" %>
+    <%= f.text_field :intlcity %>
+    </div>
+
+    <%= f.submit "Submit Pledge", class: "btn btn-default btn-primary" %>
+  <% end %>

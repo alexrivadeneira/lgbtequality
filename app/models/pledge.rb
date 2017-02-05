@@ -1,7 +1,7 @@
 class Pledge < ApplicationRecord
 	validates :firstname, length: { minimum: 1 }, :presence => true
 	validates :lastname, length: { minimum: 2 }, :presence => true
-	validates :email, length: { minimum: 6 }, :presence => true
+	validates :email, length: { minimum: 6 }, :presence => true, :uniqueness => true
 	validates :program, :presence => true
 	validates :gradyear, :presence => true
 	validates :cohort, length: {maximum: 30}
