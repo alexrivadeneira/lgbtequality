@@ -5,16 +5,18 @@ class PledgeController < ApplicationController
 
 
   def create
+    puts pledge_params
   	@pledge = Pledge.new(pledge_params)
   	if @pledge.save 
-  		render "who"
-  	else
+      flash[:notice] = 'Your user was successfully created.'
   		redirect_to action: "who"
+  	else
+  		render "form"
   	end
   end
 
   def pledge_params
-  	params.require(:pledge).permit(:firstname, :lastname, :email, :program, :gradyear, :cohort, :public, :additional, :reason, :assist, :intlcity)
+  	params.require(:pledge).permit(:firstname, :lastname, :email, :program, :gradyear, :cohort, :public, :additional, :reason, :assist, :intl, :intlcity)
   end
 
   def who
