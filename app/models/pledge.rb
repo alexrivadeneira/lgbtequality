@@ -5,10 +5,11 @@ class Pledge < ApplicationRecord
 	validates :program, :presence => true
 	validates :gradyear, :presence => true
 	validates :cohort, length: {maximum: 30}
-	validates_inclusion_of :public, :in => [true, false]
+	validates :public, inclusion: { in: [ true, false ] }
 	validates :additional, length: {maximum: 300}
 	validates :reason, length: {maximum: 300}
 	validates :assist, length: {maximum: 300}
 	validates :intlcity, length: {maximum: 30}
 
 end
+	
