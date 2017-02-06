@@ -1,15 +1,25 @@
 
 
+
+
+
+
+<div class="container">
 <div class="row">
   <div class=" col-md-offset-3 col-md-6">
     <%= image_tag "logo.png", :class => "img-responsive" %>
   </div>
 </div>
+</div>
 
 
-  <%= form_for @pledge, :html => {:class => "form-horizontal col-md-8"}, role: "form", url: {action: "create"} do |f| %>
+<div class="row">
+
+
+
+  <%= form_for @pledge, :html => {:class => "form-horizontal col-md-12"}, role: "form", url: {action: "create"} do |f| %>
     <% if @pledge.errors.any? %>
-      <div class="error_messages alert-warning">
+      <div class="error_messages alert-danger">
         <ul>
           <% for message in @pledge.errors.full_messages %>
             <li><%= message %></li>
@@ -64,16 +74,16 @@
       </div>
     </div>
 
-    <fieldset class="form-group">
-    <legend>Make signature public?</legend>
 
-    <div class="form-check ">
-      <%= f.label :public, "Yes", class: "form-check-label" %>
-      <%= f.radio_button :public_yes, "YES", :checked => false %>
-      <% f.label :public, "No", class: "form-check-label" %>
-      <%= f.radio_button :public_no, "NO", :checked => true %> 
-    </div>
-    </fieldset>
+  <div class="form-check">
+    <%= f.label :public, "Make your signature public?" %><br />
+    <%= f.label :public, "Yes", :value => "true"  %>
+    <%= f.radio_button :public, true %>
+    <%= f.label :public, "No", :value => "false" %>
+    <%= f.radio_button :public, false, :checked => true %>
+  </div>
+
+
 
     <div class="form-group">
       <%= f.label :additional, "Additional information", class: "col-md-3 control-label" %>
@@ -83,7 +93,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :reason, "Reason sumbitting", class: "col-md-3 control-label" %>
+      <%= f.label :reason, "Reason submitting", class: "col-md-3 control-label" %>
       <div class="col-md-6">
         <%= f.text_area :reason, class: "form-control" %>
       </div>
@@ -98,10 +108,8 @@
 
     <div class="form-check">
       <%= f.label :intl, "Are you an international student?" %>
-      <%= f.radio_button :intl, 'yes', :checked => true %> Yes
-          
-      <%= f.radio_button :intl, 'no', :checked => false %> No
-
+      <%= f.radio_button :intl, 'yes', :checked => false %> Yes
+      <%= f.radio_button :intl, 'no', :checked => true %> No
     </div>
 
     <div class="form-group">
@@ -111,27 +119,10 @@
       </div>
     </div>
 
-  <fieldset class="form-group">
-    <legend>Radio buttons</legend>
-    <div class="form-check">
-      <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-        Option one is this and that&mdash;be sure to include why it's great
-      </label>
-    </div>
-    <div class="form-check">
-    <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-        Option two can be something else and selecting it will deselect option one
-      </label>
-    </div>
-    <div class="form-check disabled">
-    <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-        Option three is disabled
-      </label>
-    </div>
-  </fieldset>
+<br />
 
     <%= f.submit "Submit Pledge", class: "btn btn-default btn-primary" %>
   <% end %>
+
+  </div>
+
