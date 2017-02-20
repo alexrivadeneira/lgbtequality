@@ -1,13 +1,30 @@
 
-  <h2 class="display-3 text-center">Pledgees</h2>
+<h2 class="display-3 text-center">School Leaderboard</h2>
+ 
+<% @school_counts.each do |school, count| %>
+<% adj_count = count * @multiplier %>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <%= adj_count %>%;">
+    <%= school %> (<%= count %>)
+  </div>
+</div>
+<% end %>
+
+
+
+  <h2 class="display-3 text-center">Pledges</h2>
 
 
 <ul>
-
-<% @publicpledges.each do |pledge| %>
-
-<li><%= pledge.firstname %></li>
-
-<% end %>
-
+	<% @publicpledges.each do |pledge| %>
+		<li><%= pledge %></li>
+	<% end %>
 </ul>
+
+<ul>
+	<% @public_emails.each do |pledge| %>
+		<li><%= pledge %></li>
+	<% end %>
+</ul>
+
+
