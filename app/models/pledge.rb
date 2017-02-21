@@ -11,5 +11,17 @@ class Pledge < ApplicationRecord
 	validates :assist, length: {maximum: 300}
 	validates :intlcity, length: {maximum: 30}
 
+	def self.to_csv
+		attributes = %w{id firstname lastname email program gradyear cohort public additional reason assist intl intlcity created_at}
+		
+		CSV.generate(headers: true) do |csv|
+			csv << attributes
+
+			all.each do |pledge|
+				csv << pledge.attributes.values_at(*attributes)
+			end
+		end
+	end
+
 end
 	

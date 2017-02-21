@@ -5,6 +5,15 @@ class PledgeController < ApplicationController
   end
 
 
+  def csv
+    @pledges = Pledge.all
+
+    respond_to do |format|
+      format.html 
+      format.csv { send_data @pledges.to_csv}
+    end
+  end
+
   def create
     puts pledge_params
   	@pledge = Pledge.new(pledge_params)
