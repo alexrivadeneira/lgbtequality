@@ -54,7 +54,7 @@
     </div>
 
     <div class="form-group", id = "form-berkeley">
-      <%= f.label :cohort, "Cohort (Berkeley Only)", class: "col-md-3 control-label" %>
+      <%= f.label :cohort, "Cohort", class: "col-md-3 control-label" %>
       <div class="col-md-6">
         <%= f.select :cohort, options_for_select(["Blue", "Gold", "Axe", "Oski", "N/A - Faculty/Staff", "Other"]), {}, class: "form-control" %>
       </div>
@@ -133,7 +133,9 @@
   var berkeleyForm = document.getElementById("form-berkeley");
 
   emailForm.addEventListener("input", function(){
-      if(emailForm.value.toLowerCase().split("@")[1] === "berkeley.edu"){
+      if(emailForm.value.toLowerCase().split("@")[1] === "mba.berkeley.edu") {
+        berkeleyForm.style.display = "block";
+      } else if(emailForm.value.toLowerCase().split("@")[1] === "berkeley.edu"){
         berkeleyForm.style.display = "block";
       } else {
         berkeleyForm.style.display = "none";
