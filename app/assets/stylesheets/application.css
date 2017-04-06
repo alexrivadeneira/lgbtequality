@@ -16,3 +16,136 @@
  */
 
 
+
+/* Custom container */
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Custom navbar */
+.navbar-brand ,.navbar-nav>li>a {
+  	padding-left: 30px;
+    padding-right: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+} 
+.navbar-nav>.active>a {
+	opacity:.6;
+}
+
+
+    .jumbotron ul li{
+      font-size: 21px;
+    }
+
+    .container .jumbotron, .container-fluid .jumbotron{
+      border-radius: 0;
+    }
+
+    .btn-primary{
+      background: rgba(216, 10, 93, .8);
+      border: none;
+      border-radius: none;
+    }
+
+    .btn-group-lg>.btn, .btn-lg{
+      border-radius: 0;
+    }
+
+    .btn{
+      border-radius: 0;
+        transition: background-color 0.5s ease;
+
+    }
+    body{
+
+
+
+      font-family: 'Karla', sans-serif;
+      background: rgba(255,255,255,1);
+      background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+      background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+      background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+      background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+      background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+      background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
+
+    }
+
+    .progress-bar{
+      background: #d80a5d;
+    }
+
+    .progress{
+      border-radius: 0;
+      background: none;
+      box-shadow: none;
+      margin-bottom: 5px;
+    }
+
+    #form-berkeley{
+      display: none;
+    }
+
+    #form-berkeley{
+      transition: opacity 3s ease-in;
+    }
+
+    .hero-unit-office{
+    background: url("office-outside2.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    }
+
+    .jumbotron h1{
+      text-align: center;
+      text-transform: uppercase;
+      color: #fff !important;
+      font-family: 'Roboto', sans-serif;
+      font-size: 69px;
+      line-height: 1em;
+      font-weight: 700;
+      letter-spacing: 0.057971em;
+
+
+    }
+
+
+
+    .jumbotron h3{
+      text-align: center;
+      color: #fff !important;
+      font-family: 'Lato', sans-serif;
+      font-size: 24px;
+      line-height: 1.6em;
+      letter-spacing: 0;
+      font-weight: 300;
+
+
+    }
+
+    .jumbotron .btn{
+      margin: 0 auto;
+      border-radius: 300px;
+      font-weight: 500;
+      padding: 1em 1.75em;
+            background: rgba(216, 10, 93, .8);
+            border: none;
+
+    }
+    
+    .hero-logo-img{
+      position: relative;
+      width: 250px;
+      left: 15px;
+      top: 15px;
+    }
+
+    .jumbotron{
+      padding-top: 0 !important;
+    }
