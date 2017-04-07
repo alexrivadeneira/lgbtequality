@@ -108,7 +108,28 @@
 
     }
 
+    .row-fluid h2{
+      text-align: center;
+      text-transform: uppercase;
+      font-family: 'Roboto', sans-serif;
+      font-size: 36px;
+      line-height: 1.2em;
+      font-weight: 900;
+      letter-spacing: 0.015em;
+      color: rgba(216, 10, 93, 1);
+    }
 
+
+    .jumbotron .row-fluid p{
+      font-size: 16px
+    }
+
+    .jumbotron .row-fluid ul li{
+      font-size: 16px;
+    }
+
+
+    
 
     .jumbotron h3{
       text-align: center;
@@ -140,7 +161,7 @@
     }
 
     .nav-logo-img{
-      width: 70px;
+      width: 60px;
     }
 
     .navbar-brand>img{
@@ -167,7 +188,9 @@
   }
 
     .jumbotron{
-      padding-top: 0 !important;
+    transition: background 0.5s linear;
+    -webkit-transition: background 1.5s linear; 
+    padding-top: 58px !important;
     }
 
 
@@ -175,9 +198,29 @@
     .hero-unit-office{
 
     background-image: image-url("office-outside2-web.jpg");
+    background-image: url("office-outside2-web.jpg");
+  transition: background-image 1s ease-in-out;
+
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 500px;
+    padding-left: 15px;
+    padding-right: 15px;
+    }
+
+    .row-fluid{
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+
+.navbar-default .navbar-toggle .icon-bar{
+  background-color: #fff !important;
+}
+    @media(max-width: 768px){
+      .navbar-header{
+        height: 58px;
+      }
     }
