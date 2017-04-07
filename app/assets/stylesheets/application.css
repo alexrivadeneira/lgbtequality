@@ -93,15 +93,7 @@
       transition: opacity 3s ease-in;
     }
 
-    .hero-unit-office{
 
-    background-image: image-url("office-outside2-web.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 500px;
-    }
 
     .jumbotron h1{
       text-align: center;
@@ -135,8 +127,8 @@
       border-radius: 300px;
       font-weight: 500;
       padding: 1em 1.75em;
-            background: rgba(216, 10, 93, .8);
-            border: none;
+      background: rgba(216, 10, 93, .8);
+      border: none;
 
     }
     
@@ -176,4 +168,16 @@
 
     .jumbotron{
       padding-top: 0 !important;
+    }
+
+
+
+    .hero-unit-office{
+
+    background-image: image-url("office-outside2-web.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
     }
