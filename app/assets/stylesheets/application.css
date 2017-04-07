@@ -197,7 +197,7 @@
 
     .hero-unit-office{
 
-    background-image: image-url("office-outside2-web.jpg");
+    background-image: url("office-outside2-web.jpg");
   transition: background-image 1s ease-in-out;
 
     background-attachment: fixed;
