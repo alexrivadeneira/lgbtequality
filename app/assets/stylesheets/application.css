@@ -94,7 +94,8 @@
     }
 
     .hero-unit-office{
-    background: url("office-outside2-web.jpg");
+
+    background-image: image-url("office-outside2-web.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -145,6 +146,33 @@
       left: 15px;
       top: 15px;
     }
+
+    .nav-logo-img{
+      width: 70px;
+    }
+
+    .navbar-brand>img{
+      position: relative;
+      top: -15px;
+    }
+
+    .navbar-default{
+      background: rgba(216, 10, 93, .8) !important;
+    }
+
+  .navbar-default .navbar-brand{
+  color: #fff !important;
+  font-weight: 700;
+  }
+
+  .navbar-default .navbar-nav>li>a{
+    color: #fff !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: .16em;
+    line-height: 2em;
+  }
 
     .jumbotron{
       padding-top: 0 !important;
